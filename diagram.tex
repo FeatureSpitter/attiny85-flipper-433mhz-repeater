@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{circuitikz}
+\begin{document}
+\begin{circuitikz}
+  % ATtiny85
+  \node[rectangle, draw, minimum width=2.5cm, minimum height=1cm] (U1) at (0, 4) {ATtiny85};
+  \draw (U1.north east) -- ++(0.3, 0) node[right] {VCC};
+  \draw (U1.north west) -- ++(-0.3, 0) node[left] {GND};
+  \draw (U1.east) -- ++(2, 0) node[right] {TX\_PIN (PB2)};
+  \draw (U1.south) -- ++(0, -1.5) node[midway, right] {ANTENNA\_POWER\_PIN (PB3)};
+
+  % Resistor and NPN Transistor
+  \draw (0, 2.5) -- ++(2, 0) node[midway, above] {1kΩ} to[short] ++(0, -0.5)
+        to[transistor, n=npn] ++(0, -1.5);
+  \node at (2, 1) {NPN Transistor};
+  \draw (2, 1) -- ++(0, -0.5) node[ground] {};
+
+  % Antenna Module (MX-FS-03V)
+  \node[rectangle, draw, minimum width=2.5cm, minimum height=1cm] (ANT) at (5, 2) {MX-FS-03V};
+  \draw (ANT.east) -- ++(1, 0) node[right] {DATA};
+  \draw (ANT.north) -- ++(0, 0.8) node[above] {VCC};
+  \draw (ANT.west) -- ++(-2, 0) node[near end, above] {From NPN};
+
+  % Capacitor
+  \draw (5, 1.5) to[capacitor] (5, 0) node[ground] {};
+  \node[anchor=north] at (5, 0.5) {100µF};
+
+  % Ground connection for ATtiny85
+  \draw (0, 3.5) -- ++(-0.5, 0) node[ground] {};
+  \node at (0, 3) {GND};
+
+\end{circuitikz}
+\end{document}
