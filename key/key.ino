@@ -30,6 +30,19 @@ void setup() {
   digitalWrite(ANTENNA_POWER_PIN, LOW);
   // Ensure transmitter is idle
   digitalWrite(TX_PIN, LOW);
+  
+  digitalWrite(STATUS_LED, LOW);
+  delay(500);
+  digitalWrite(STATUS_LED, HIGH);
+  delay(500);
+  digitalWrite(STATUS_LED, LOW);
+  delay(500);
+  digitalWrite(STATUS_LED, HIGH);
+  delay(500);
+  digitalWrite(STATUS_LED, LOW);
+  delay(500);
+  digitalWrite(STATUS_LED, HIGH);
+  delay(500);
   digitalWrite(STATUS_LED, LOW);
 
   // Configure external interrupt on BUTTON_PIN (PB2/INT0)
