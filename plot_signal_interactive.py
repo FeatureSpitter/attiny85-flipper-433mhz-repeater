@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 USE_PLOTLY = True  # Change to False to use Matplotlib
 
 # File path
-input_file = "signal.txt"
+input_file = "cropped_signal.txt"
 
 def plot_signal_matplotlib(row, row_index):
     """Plots a signal row using Matplotlib with zoom and pan support."""
