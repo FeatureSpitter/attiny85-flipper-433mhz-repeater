@@ -41,6 +41,9 @@ def plot_signal(row, row_index):
         time.extend(range(current_time, current_time + abs(duration)))
         current_time += abs(duration)
 
+    # Convert time to seconds
+    time = np.array(time) / 1e6  
+
     fig, ax = plt.subplots(figsize=(12, 4))
 
     # Cross-platform window maximization
@@ -58,7 +61,7 @@ def plot_signal(row, row_index):
 
     ax.step(time, signal, where='post')
     ax.set_title(f"Signal Row {row_index}")
-    ax.set_xlabel("Time (Arbitrary Units)")
+    ax.set_xlabel("Time (Seconds)")
     ax.set_ylabel("Signal")
     ax.set_ylim(-0.2, 1.2)
 
@@ -104,10 +107,13 @@ def plot_final_cropped_signals():
                 time.extend(range(current_time, current_time + abs(duration)))
                 current_time += abs(duration)
 
+            # Convert time to seconds
+            time = np.array(time) / 1e6  
+
             plt.figure(figsize=(10, 2))
             plt.step(time, signal, where='post')
             plt.title(f"Cropped Signal Row {i}")
-            plt.xlabel("Time (Arbitrary Units)")
+            plt.xlabel("Time (Seconds)")
             plt.ylabel("Signal")
             plt.ylim(-0.2, 1.2)
             plt.show()
