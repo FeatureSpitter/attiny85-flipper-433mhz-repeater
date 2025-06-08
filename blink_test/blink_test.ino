@@ -1,4 +1,4 @@
-const int LED_PIN = 1;  // PB1 (Physical Pin 6)
+const int LED_PIN = 2;  // PB1 (Physical Pin 6)
 
 void setup() {
     cli();  // Disable interrupts (prevents bootloader weirdness)
