@@ -60,8 +60,11 @@ void blink(int interval, int times) {
     }
 }
 
+// Speed multipliers: 1.0, 0.90, 0.92, 0.95, 0.97, 1.02, 1.05, 1.07, 1.10
+const float speed_multipliers[] = {1.0, 0.90, 0.92, 0.95, 0.97, 1.02, 1.05, 1.07, 1.10};
+const uint8_t total_speeds = sizeof(speed_multipliers) / sizeof(speed_multipliers[0]);
+uint8_t current_speed = 0;
 bool terminated = false;
-uint8_t loop_count = 0;
 
 void loop() {
     if(terminated) {
@@ -79,25 +82,22 @@ void loop() {
         digitalWrite(STATUS_LED, LOW);
     }
 
-    // First run uses smartDelay, second run uses smarterDelay
-    if (loop_count == 0) {
-        smartDelay(abs(val));
-    } else {
-        smarterDelay(abs(val));
-    }
+    // Apply speed multiplier to the delay value
+    smartDelay(abs(val) * speed_multipliers[current_speed]);
 
     if (++pointer >= signal_length) {
         pointer = 0;  // Reset pointer when end of signal is reached
         digitalWrite(TX_PIN, LOW);
         digitalWrite(STATUS_LED, LOW);
         
-        loop_count++;
-        if (loop_count == 1) {
-            // Pause for 500ms before starting the second loop
-            delay(500);
-        }
-        if (loop_count >= 2) {
-            terminated = true;
+        // Move to next speed
+        current_speed++;
+        
+        // Indicate which speed we're using with LED blinks
+        if (current_speed < total_speeds) {
+            delay(200);  // 200ms pause between iterations
+        } else {
+            terminated = true;  // Done with all speeds
         }
     }
 }
@@ -111,15 +111,3 @@ void smartDelay(uint16_t us) {
     }
 }
 
-void smarterDelay(int16_t us) {
-    if (us > 10000) {
-        int16_t ms = us / 1000;
-        delay(ms);
-        us %= 1000;  // Cleaner remainder calculation
-    }
-    
-    if (us > 0) {  // Only do micros loop if needed
-        uint32_t start = micros();
-        while (micros() - start < us);
-    }
-}
