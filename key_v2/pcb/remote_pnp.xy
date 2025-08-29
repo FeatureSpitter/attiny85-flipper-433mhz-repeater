@@ -1,0 +1,26 @@
+# Pick And Place List
+# Company=
+# Author=
+# eMail=
+#
+# Project=remote
+# Date=17:54:01
+# CreatedBy=Fritzing 1.0.1rc.2024-04-08.debian/1.0.1-1build4
+#
+#
+# Coordinates in mils, always center of component
+# Origin 0/0=Lower left corner of PCB
+# Rotation in degree (0-360, math. pos.)
+#
+RefDes,Description,Package,X,Y,Rotation,Side,Mount
+Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
+STX882,";;;;;;;;","THT",344.713,500.186,-90,Top,THT
+U1,";;;;;;;;","dip",376.565,814.931,90,Top,THT
+R1,"220;;;;;0.25;;;","THT",693.208,312.601,114.439,Top,THT
+LED1,";;;;0.030;;;;","5 mm [THT]",497.814,224.595,-90,Top,THT
+Via4,";;;;;;;;","",602.193,893.887,0,Top,MANUAL
+C1,";;;;;;;;","cap-pth-small",159.283,285.009,0,Top,SMT
+Via3,";;;;;;;;","",88.6282,863.285,0,Top,MANUAL
+S2,";;;;;;;;","THT",641.563,678.926,0,Top,THT
+Via2,";;;;;;;;","",759.673,775.776,0,Top,MANUAL
+-,";;;;;;;;","THT",158.492,179.188,-90,Top,THT
