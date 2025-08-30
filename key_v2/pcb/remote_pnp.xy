@@ -4,7 +4,7 @@
 # eMail=
 #
 # Project=remote
-# Date=21:12:23
+# Date=12:35:11
 # CreatedBy=Fritzing 1.0.1rc.2024-04-08.debian/1.0.1-1build4
 #
 #
@@ -14,16 +14,15 @@
 #
 RefDes,Description,Package,X,Y,Rotation,Side,Mount
 Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
-GND,";;;;;;;;","THT",599.515,128.765,90,Top,THT
-₿,";;;;;;;;","tactile-pth",282.722,172.081,0,Top,SMT
-AT85,";;;;;;;;","dip",376.567,837.154,90,Top,THT
-Via5,";;;;;;;;","",60.8896,398.572,0,Top,MANUAL
-STX882,";;;;;;;;","THT",344.711,555.742,-90,Top,THT
-Switch,";;;;;;;;","THT",641.567,678.926,0,Top,THT
 Via3,";;;;;;;;","",88.6295,863.285,0,Top,MANUAL
+Switch,";;;;;;;;","THT",641.567,678.926,0,Top,THT
+₿,";;;;;;;;","tactile-pth",282.722,172.078,0,Top,SMT
+220Ω,"220;;;;;0.25;;;","THT",759.244,302.434,90,Top,THT
 Via4,";;;;;;;;","",602.196,893.887,0,Top,MANUAL
-0.1µF,";;;;;;;;","cap-pth-small",313.706,431.116,33.87,Top,SMT
-LED1,";;;;0.030;;;;","5 mm [THT]",617.073,310.398,-90,Top,THT
-Via6,";;;;;;;;","",551.25,380.632,0,Top,MANUAL
-220Ω,"220;;;;;0.25;;;","THT",759.246,302.434,90,Top,THT
-Via2,";;;;;;;;","",759.674,775.777,0,Top,MANUAL
+Via6,";;;;;;;;","",551.252,380.627,0,Top,MANUAL
+AT85,";;;;;;;;","dip",376.567,837.154,90,Top,THT
+STX882,";;;;;;;;","THT",344.711,555.742,-90,Top,THT
+GND,";;;;;;;;","THT",599.511,128.767,90,Top,THT
+LED1,";;;;0.030;;;;","5 mm [THT]",617.072,310.395,-90,Top,THT
+0.1µF,";;;;;;;;","cap-pth-small",313.711,431.116,33.87,Top,SMT
+Via5,";;;;;;;;","",60.885,398.571,0,Top,MANUAL
